@@ -22,8 +22,9 @@
 ;; accept. For example:
 ;;
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+;;    doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 20 :weight 'normal))
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -74,3 +75,12 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Open emacs full size by default
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(fullscreen . fullheight))
+
+;; Set Variables
+(setq
+ projectile-project-search-path '("~/git-projects/")
+)
