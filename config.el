@@ -84,3 +84,10 @@
 (setq
  projectile-project-search-path '("~/git-projects/")
 )
+
+;; Go hooks
+(add-hook 'go-mode-hook #'lsp-deferred)
+;; Make sure you don't have other goimports hooks enabled.
+(defun lsp-go-install-save-hooks ()
+    (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
